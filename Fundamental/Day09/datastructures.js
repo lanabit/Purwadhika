@@ -198,3 +198,5 @@ myLinkedList.add('B');
 console.log(myLinkedList)
 myLinkedList.insertAt("NewValue",1)
 myLinkedList.printList();
+myLinkedList.add('X');
+fdsfksfl
