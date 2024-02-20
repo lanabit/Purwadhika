@@ -165,7 +165,7 @@ class LinkedList {
     }
   }
 
-  remove(element) {
+  removeElement(element) {
     let current = this.head;
     let prev = null;
 
@@ -188,15 +188,60 @@ class LinkedList {
 
     return null;
   }
+
+  removeAt(index){
+    if(index<0 || index >= this.size){
+      return console.log("Please enter a valid index");
+    } else {
+      let curr = this.head;
+      let prev = curr;
+
+    //deleting first element
+    if (index === 0){
+      this.head = curr.next;
+    } else {
+      for(let i = 0; i < index; i++) {
+        prev = curr;
+        curr = curr.next;
+      }
+
+      prev.next = curr.next;
+    }
+
+    this.size -= 1;
+
+    return curr.element;
+  }
+}
+  //finds the index of element
+  indexOf(element){
+    let count = 0;
+    let current = this.head;
+
+    // iterate over the list
+    while (current != null){
+      // compare each element of the list with given element
+      if(current.element === element) {
+        return count;
+      }
+
+      count += 1;
+      current = current.next;
+    }
+
+    //not found
+    return -1;
+  }
 }
 
 const myLinkedList = new LinkedList();
 
 myLinkedList.add('A');
-console.log(myLinkedList)
 myLinkedList.add('B');
-console.log(myLinkedList)
 myLinkedList.insertAt("NewValue",1)
-myLinkedList.printList();
 myLinkedList.add('X');
-fdsfksfl
+myLinkedList.removeAt(2)
+myLinkedList.removeElement('X')
+myLinkedList.printList();
+console.log("indexOf('A') =",myLinkedList.indexOf('A'))
+console.log(myLinkedList)
