@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+
+  class Users {
+    #password = '';
+
+  constructor(username, email, password, age) {
+    this.username = username;
+    this.email = email;
+    this.#password = password;
+    this.age = age;
+  }
+
+  // GETTER => method untuk mengambil data yang sudah dimanipulasi
+  get getPassword() {
+    return `*****${this.#password.slice(this.#password.length-2)}`;
+  }
+
+  get getAge() {
+    let userdate = new Date(this.age).getTime();
+    let today = new Date().getTime();
+    let timeElapsed = Math.abs(userdate - today);
+    return Math.floor(((timeElapsed/1000)/3600)/24/365);
+  }
+}
+
+let username = prompt('Input username:');
+let email = prompt('Input email:');
+let password = prompt('Input password:');
+let age = prompt("Input birth date (format: yyyy/mm/dd): ");
+
+const user1 = new Users(username, email, password, age);
+alert(`Username: ${user1.username} \n Email: ${user1.email} \n Password: ${user1.getPassword} \n Age: ${user1.getAge}`)
+</script>
+</html>

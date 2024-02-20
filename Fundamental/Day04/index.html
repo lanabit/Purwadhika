@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  const fruits = ['Apel', 'Jeruk', 'Mangga'];
+  const price = [10000, 15000, 20000];
+  let txt = '';
+
+  for (let i = 0; i < fruits.length; i++) {
+      txt += `${i+1}. ${fruits[i]} = Rp ${price[i].toLocaleString('id-ID')} \n`;
+  }
+
+  do {
+    var menu = Number(prompt(txt));
+    if(menu < 1 || menu > fruits.length || isNaN(menu)) {
+      alert('Product not found')
+    } else {
+      alert('Product found')
+    }
+  }
+  while (menu < 1 || menu > fruits.length || isNaN(menu));
+
+</script>
+</html>

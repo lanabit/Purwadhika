@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    <script>
+        let username = prompt("Please input your username : ");
+        let email = prompt("Please input your Email : ");
+        let password = prompt("Please input your password : ");
+        let birthDate = prompt("Please input your birth Date (YYYY-MM-DD) : ");
+
+        var today = new Date();
+        class User {
+            username = '';
+            email = '';
+            #password = '';
+            birthDate = '';
+            constructor(username, email, password, birthDate){
+                this.username = username;
+                this.email = email;
+                this.#password = password;
+                this.birthDate = birthDate;
+            }
+
+            get password(){
+                return `****${this.#password.slice(4, this.#password.length)}`;
+            }
+        }
+
+        const user1 = new User(username, email, password, birthDate);
+        
+        alert(`username : ${user1.username} \n 
+        email : ${user1.email}\n 
+        password : ${user1.password}\n 
+        Age : ${new Date().getFullYear() - user1.birthDate.getFullYear()}`);
+    </script>
+</body>
+</html>

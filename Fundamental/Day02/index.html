@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise</title>
+</head>
+<body>
+</body>
+<script >
+  let num1 = prompt('Input first number:');
+  num1 = Number(num1);
+  let num2 = prompt('Input second number:');
+  num2 = parseInt(num2);
+  const op = prompt('Input operation + , - , * atau x, / :');
+
+  let result;
+
+  if (op == '+'){
+    result = num1 + num2;
+  }else if (op == "-"){
+    result = num1 - num2;
+  }else if (op == "*" || op == "x"){
+    result = num1 * num2;
+  }else if (op == "/"){
+    result = num1 / num2;
+  }else {
+    result = "operation not found"
+  }
+
+  alert(result);
+    
+  //  const opCol = ['+','-','*','/'];
+
+  // if(opCol.includes(op)){
+  //   if (op == '+'){
+  //     result = num1 + num2;
+  //   }else if (op == "-"){
+  //     result = num1 - num2;
+  //   }else if (op == "*"){
+  //     result = num1 * num2;
+  //   }else if (op == "/"){
+  //     result = num1 / num2;
+  //   }
+  // }else {
+  //   result = "operation not found"
+  // }
+  
+</script>
+</html> 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Products{
+        constructor(id, name, price){
+            this.id = id;
+            this.name = name;
+            this.price = price;
+        }
+    }
+
+
+    class Transactions{
+        totalItemCart = 0;
+        cart = [];
+
+        showProducts(arrProducts){
+            let printOut = 'Enter Product Number to Add to Cart, or \'0\' to checkout: \n';
+
+            for(let item of arrProducts){
+                printOut += `${item.id}. ${item.name} = ${item.price.toLocaleString('id-ID', {style:"currency", currency: "IDR"})} \n`
+            }
+
+            const selectedProduct = Number(prompt(printOut));
+
+            if(selectedProduct == 0){
+              this.checkOut();
+            } else {
+              const qty = Number(prompt('Input Qty:'))
+
+              this.addToCart(arrProducts, selectedProduct, qty)}
+        }
+
+        addToCart(arrProducts, selectedProduct, qty){
+            this.cart.push({...arrProducts[selectedProduct-1], qty: qty, totalPerItem: qty*arrProducts[selectedProduct-1].price})
+            this.totalItemCart += qty;
+            alert('Add To Cart Success!')
+            this.showProducts(arrProducts);
+        }
+
+        checkOut(){
+          let printOut = ''
+          let totalPrice = 0;
+          for (let i of this.cart) {
+            printOut += `${i.name} ${i.price.toLocaleString('id-ID', {style:"currency", currency: "IDR"})}, Qty: ${i.qty}, ${i.totalPerItem.toLocaleString('id-ID', {style:"currency", currency: "IDR"})}\n`;
+            totalPrice += i.totalPerItem;
+          }
+          printOut += `${this.totalItemCart} Items\n`;
+          printOut += `Total : ${totalPrice.toLocaleString('id-ID', {style:"currency", currency: "IDR"})}`;
+          alert(printOut);
+        }
+    }
+
+    const products = [
+        new Products(1, 'Apel', 10000), 
+        new Products(2, 'Jeruk', 15000), 
+        new Products(3, 'Anggur', 20000),
+        new Products(4, 'Manggis', 16000)
+    ]
+
+    new Transactions().showProducts(products)
+
+</script>
+</html>
