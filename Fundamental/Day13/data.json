@@ -1,0 +1,14 @@
+{
+  "students": [
+    {
+      "name": "Ryan",
+      "hobby": "Futsal",
+      "phone": 6281
+    },
+    {
+      "name": "Aboy",
+      "hobby": "Taekwondo"
+    }
+  ]
+}
+

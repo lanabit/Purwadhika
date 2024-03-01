@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <fieldset>
+    <legend>To Do App</legend>
+
+    <label>New To Do: </label>
+    <input type="text" id="new" placeholder="Tulis..."/>
+    <button onclick="pushData()" type="submit">Enter</button>
+    
+    <table>
+      <tbody id="datalist">
+      </tbody>
+    </table>
+  </fieldset>
+</body>
+<script>
+  const list = ["Eat","Pray","Love"];
+
+  showData()
+
+  function pushData(){
+    let newdata = document.getElementById("new").value;
+    list.push(newdata)
+    showData()
+  }
+
+  function showData(){
+    let txt = ``;
+    list.forEach((x,i) => {
+      txt += `<tr><td> ${i+1} </td> <td> ${x} </td> <td> <button onclick="deleteData(${i})" class="delete">Delete</button> </td></tr>`
+    })
+    document.getElementById("datalist").innerHTML = txt;
+  }
+
+  function deleteData(i){
+    if(confirm("Delete data?")){
+      list.splice(i,1)
+      showData()
+    }
+  }
+
+</script>
+</html>

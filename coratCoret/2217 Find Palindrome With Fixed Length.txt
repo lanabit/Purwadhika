@@ -1,0 +1,19 @@
+var kthPalindrome = function(queries, intLength) {
+    const start = '1';
+    const result = [];
+    const currentNum = start.padEnd(intLength, '0').split('')
+    // cara cari titik tengah bds intLength gimana?
+        // cek genap atau ganjil
+        // genap 11, 1001, 100001
+//nextnya selalu 22, 1111, 101101 -> 1 mulai dari length%2 -1. length%2 - 1 + 1 == length%2 -1
+        // ganjil 101, 10001, 1000001 
+//nextnya selalu 111, 10101, 1001001 -> 1 mulai dari floor(length/2)++, 
+                                //    lalu flr(l/2)-1 = 1++, flr(l/2)
+    
+    currentNum[currentNum.length-1] = currentNum[0] 
+    
+    
+    return currentNum
+};
+
+console.log(kthPalindrome([1,2,3], 3))

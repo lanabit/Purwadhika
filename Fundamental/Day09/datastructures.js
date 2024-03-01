@@ -109,7 +109,7 @@ class LinkedList {
     // if list is empty, add the element and make it head
     if(this.head == null) {
       this.head = node;
-    }else {
+    } else {
       current = this.head;
     
     // iterate to the end of the list 
@@ -235,7 +235,7 @@ class LinkedList {
 }
 
 const myLinkedList = new LinkedList();
-
+console.log(myLinkedList)
 myLinkedList.add('A');
 myLinkedList.add('B');
 myLinkedList.insertAt("NewValue",1)
@@ -243,5 +243,5 @@ myLinkedList.add('X');
 myLinkedList.removeAt(2)
 myLinkedList.removeElement('X')
 myLinkedList.printList();
-console.log("indexOf('A') =",myLinkedList.indexOf('A'))
+// console.log("indexOf('A') =",myLinkedList.indexOf('A'))
 console.log(myLinkedList)

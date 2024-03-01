@@ -1,0 +1,141 @@
+/* <uniquifier>: Use a unique and descriptive class name
+  <weight>: Use a value from 100 to 900*/
+
+
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://cdn0-production-images-kly.akamaized.net/JI5aM9lQ_50OXU5fHPakP8IePJY=/0x105:999x668/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3922449/original/095600900_1643856254-shutterstock_1072908059.jpg");
+  height: 50vh;
+}
+
+
+.navbar{
+  margin: 0 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo{
+  display: flex;
+  height: 50px;
+  padding: 20px 50px;
+}
+
+.navbar-menu{
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  width: 40vw;
+}
+
+.box-menu{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 40px 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  min-width: 20vw;
+  max-width: 20vw;
+  min-height: 20vh;
+}
+
+.box-menu > input {
+  height: 36px;
+  margin: 5px 0px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.box-menu > button {
+  height: 36px;
+  margin: 5px 0px;
+  background-color: #6DCA08;
+  border: none;
+  border-radius: 5px;
+}
+
+.food-selection-parent {
+  margin: 50px 300px;
+}
+
+.food-selection-parent h1 {
+  margin: 50px 20px;
+}
+
+#food-selection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.food-category {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  margin: 20px 0px;
+}
+
+.food-category img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.food-category p {
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.value-prop {
+  margin: 50px 320px;
+}
+
+.value-prop h1{
+  margin: 30px 0;
+}
+
+.value-prop p {
+  font-size: 16px;
+  margin: 20px
+}
+
+.faq {
+  margin: 50px 320px;
+}
+
+.faq h1{
+  margin: 30px 0;
+}
+
+.faq h3{
+  margin-bottom: 15px;
+}
+
+.faq p {
+  margin-bottom: 50px;
+}
+
+.faq button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 auto;
+  width: 100%;
+  margin: 15px 0px;
+  height: 50px;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 1px solid gray;
+}

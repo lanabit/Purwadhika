@@ -1,0 +1,25 @@
+
+table {
+  background-color: black;
+  padding: 10px;
+  margin: 0px;
+}
+
+td {
+  background-color: #ffdb58;
+  padding: 10px 10px;
+  margin: 0px;
+  text-align: center;
+}
+
+th {
+  color: white;
+  padding: 10px 10px;
+  margin: 0px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

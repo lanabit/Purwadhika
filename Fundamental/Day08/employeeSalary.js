@@ -11,18 +11,22 @@ class Employee {
 }
 
 class FullTime extends Employee{
+  FullTimePokok = 100_000;
+  FullTimeEkstra = 50_000;
   constructor(name, total){
     super(name, total);
-    this.gajitotal = (this.gaji(100000,50000)).toLocaleString("id-ID",{style: "currency", currency: "IDR"});
+    this.gajitotal = (this.gaji(this.FullTimePokok,this.FullTimeEkstra)).toLocaleString("id-ID",{style: "currency", currency: "IDR"});
   }
 
   
 }
 
 class PartTime extends Employee{
+  partTimePokok = 50_000;
+  partTimeEkstra = 35_000;
   constructor(name, total){
     super(name, total);
-    this.gajitotal = (this.gaji(50000,35000)).toLocaleString("id-ID",{style: "currency", currency: "IDR"});
+    this.gajitotal = (this.gaji(this.partTimePokok,this.partTimeEkstra)).toLocaleString("id-ID",{style: "currency", currency: "IDR"});
   }
 }
 

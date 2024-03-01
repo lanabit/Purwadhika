@@ -1,0 +1,28 @@
+.pwd{
+  color: red;
+}
+
+@media screen and (min-width: 481px) {
+  .pwd{
+    color: blue;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .pwd{
+    color: black;
+  }
+}
+
+/* Or */
+
+.pwd{
+  color: red;
+  @media screen and (min-width: 481px) {
+      color: blue;
+  }
+  
+  @media screen and (min-width: 769px) {
+      color: black;
+  }
+}

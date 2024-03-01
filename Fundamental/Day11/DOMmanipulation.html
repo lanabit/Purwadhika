@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="showUsername"></h1>
+    <h1 id="showPassword"></h1>
+
+    <input type="text" id="username" placeholder="Enter Your Username" />
+    <input type="password" id="password" placeholder="Enter Your Password" />
+    <button onclick="Bebas()">Register</button>
+  </body>
+  <script>
+    function Bebas() {
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+      
+      if(password.length < 6){
+        password = null
+        document.getElementById("showUsername").innerHTML = "Register Failed";
+        document.getElementById("showPassword").innerHTML = password; 
+      }else{
+        password = password.substring(0, 2) + "***";
+        document.getElementById("showUsername").innerHTML = username;
+        document.getElementById("showPassword").innerHTML = password;
+      } 
+    }
+  </script>
+</html>

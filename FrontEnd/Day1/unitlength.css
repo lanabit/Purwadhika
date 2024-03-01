@@ -1,0 +1,11 @@
+.wrapper-01 > .inner-01{
+  font-size: 12px;
+}
+
+.wrapper-01 > .inner-01 > p {
+  font-size: 2em;
+}
+
+.wrapper-02 > p {
+  font-size: 3rem;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  class WelcomePage {
+    show(products){
+      let welcome = "*** Welcome Admin ***\n"
+      for(let x of products){
+
+        welcome += `${x.id}. ${x.name}: ${x.price.toLocaleString("id-ID", {style: "currency", currency: "IDR"})}`;
+
+        if( x.discount != 0){
+          welcome += ` (${x.discount}%) = ${(x.price * ((100-x.discount)/100)).toLocaleString("id-ID", {style: "currency", currency: "IDR"})}\n`
+        }else{
+          welcome += `\n`;
+        }
+        
+      }
+      alert(welcome)
+    }
+  }
+
+  products = [
+    {id :1, name: 'Asus', price: 20_000_000, discount: 0},
+    {id: 2, name: 'Lenovo', price: 15_000_000, discount: 10},
+    {id: 3, name: 'Acer', price: 10_000_000, discount: 30}
+  ]
+
+const productWelcomePage = new WelcomePage;
+productWelcomePage.show(products);
+</script>
+</html>
