@@ -1,0 +1,399 @@
+{
+  "users": [
+    {
+      "id": "894d",
+      "firstName": "wulan",
+      "lastName": "wjasfoiafj",
+      "email": "wafisj@gmail.com",
+      "username": "aidjsaoidj",
+      "password": "asfoiasofijoisfa"
+    },
+    {
+      "id": "64c9",
+      "firstName": "arif",
+      "lastName": "arifin",
+      "email": "arifin@gmail.com",
+      "username": "arifout",
+      "password": "arifarifarif"
+    },
+    {
+      "id": "6375",
+      "firstName": "tiyok",
+      "lastName": "rizky",
+      "email": "tiyokrizky14@gmail.com",
+      "username": "tiyokx",
+      "password": "30April1996"
+    },
+    {
+      "id": "7dc1",
+      "firstName": "tatjana",
+      "lastName": "maria",
+      "email": "tatjanamaria@yahoo.com",
+      "username": "tachamaria",
+      "password": "123maria"
+    },
+    {
+      "id": "6504",
+      "firstName": "ariana",
+      "lastName": "grande",
+      "email": "ariana@grande",
+      "username": "arianagrande",
+      "password": "arianagrande"
+    },
+    {
+      "id": "96bd",
+      "firstName": "pink",
+      "lastName": "floyd",
+      "email": "pink@floyd",
+      "username": "pinkfloyd",
+      "password": "pinkfloyd"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "T-shirt"
+    },
+    {
+      "id": "2",
+      "name": "Shirt"
+    },
+    {
+      "id": "3",
+      "name": "Hoodie"
+    },
+    {
+      "id": "4",
+      "name": "Joggers"
+    },
+    {
+      "id": "5",
+      "name": "Shorts"
+    },
+    {
+      "id": "6",
+      "name": "Sneakers"
+    }
+  ],
+  "carts": [
+    {
+      "id": "30a2",
+      "userId": "64c9",
+      "productId": "2",
+      "quantity": 5
+    },
+    {
+      "id": "b9e5",
+      "userId": "64c9",
+      "productId": "6",
+      "quantity": 2
+    },
+    {
+      "id": "c35d",
+      "userId": "64c9",
+      "productId": "4",
+      "quantity": 2
+    },
+    {
+      "id": "4fe3",
+      "userId": "64c9",
+      "productId": "7",
+      "quantity": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Adidas Originals Women's Black and White Trainers",
+      "description": "Adidas sambas\nWomen's 5.5\nGood condition",
+      "price": 60,
+      "brand": "Adidas",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 2
+        },
+        {
+          "size": "M",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/14462269/1786356078_01fbf429da2c46d3854e158982f9afaf/P0.jpg",
+        "https://media-photos.depop.com/b1/14462269/1786356270_17e000bf535643b9a0f56ce139f1b09f/P0.jpg"
+      ],
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "2",
+      "title": "Grey T-shirt",
+      "description": "This is a product listing aisfjoiasf",
+      "price": 6,
+      "brand": "Others",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 5
+        },
+        {
+          "size": "M",
+          "stock": 2
+        },
+        {
+          "size": "L",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/44378737/1700915278_78c6aec925b84e79b8ab52438fb834b4/P0.jpg",
+        "https://media-photos.depop.com/b1/44378737/1700915290_ba2593b37dfe40d88f903cac2951eb05/P0.jpg"
+      ],
+      "colors": [
+        "#dcdcdc"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "3",
+      "title": "Grey T-shirt",
+      "description": "This is a product listing 490390asf",
+      "price": 18.5,
+      "brand": "Others",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 2
+        },
+        {
+          "size": "L",
+          "stock": 1
+        },
+        {
+          "size": "XL",
+          "stock": 2
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/2449765/1750101721_adfbb6ae1c864dec98fb30c01fe69210/P0.jpg",
+        "https://media-photos.depop.com/b1/2449765/1750101722_e206974af13149d39c0a1fafc45e632e/P0.jpg"
+      ],
+      "colors": [
+        "#dcdcdc"
+      ],
+      "categoryId": 1
+    },
+    {
+      "id": "4",
+      "title": "Dickies Women's Brown and White Hoodie",
+      "description": "This is a product listing sdfkmH043",
+      "price": 20,
+      "brand": "Dickies",
+      "sizes": [
+        {
+          "size": "M",
+          "stock": 2
+        },
+        {
+          "size": "L",
+          "stock": 3
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/45428608/1785599678_0053b42a3981458da1678e7f1db228d1/P0.jpg",
+        "https://media-photos.depop.com/b1/45428608/1785600005_ca1e46870d48427fa12dffbde730a000/P0.jpg"
+      ],
+      "colors": [
+        "#7A5B3F",
+        "#FFFFFF"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "5",
+      "title": "Dickies Women's Black Hoodie",
+      "description": "This is a product listing HoodsdfkmH043",
+      "price": 16,
+      "brand": "Dickies",
+      "sizes": [
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/41913828/1766191703_bf19c97a540f4ee799ae59d19646e4e0/P0.jpg"
+      ],
+      "colors": [
+        "#000000"
+      ],
+      "categoryId": 3
+    },
+    {
+      "id": "6",
+      "title": "Nike Women's Black Shorts",
+      "description": "This is a product listing ShortssdfkmH043",
+      "price": 10,
+      "brand": "Nike",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 3
+        },
+        {
+          "size": "M",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/36453693/1787493892_1b9afb584a3540a48f207dabf5cb2de4/P0.jpg",
+        "https://media-photos.depop.com/b1/36453693/1787493958_6d7aecf279eb418883d685123c158898/P0.jpg"
+      ],
+      "colors": [
+        "#000000"
+      ],
+      "categoryId": 5
+    },
+    {
+      "id": "7",
+      "title": "American Apparel Women's Shorts",
+      "description": "This is a product listing Shorts2sdfkmH043",
+      "price": 8,
+      "brand": "American Apparel",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 1
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/17419612/1787691444_436e68816f9b4e16b8d38d82762296b9/P0.jpg",
+        "https://media-photos.depop.com/b1/17419612/1787691474_af66157b59824823951c8748bc1d48fc/P0.jpg"
+      ],
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "categoryId": 5
+    },
+    {
+      "id": "9",
+      "title": "Brandy Melville Women's Navy Shirt",
+      "description": "This is a product listing Shirts2sdfkmH043",
+      "price": 10,
+      "brand": "Brandy Melville",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 3
+        },
+        {
+          "size": "M",
+          "stock": 1
+        },
+        {
+          "size": "L",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/39534444/1785989329_986181f8aeec443c891b898303494d38/P0.jpg",
+        "https://media-photos.depop.com/b1/39534444/1785989366_8b52c939edf14780abe7fbea58efffad/P0.jpg"
+      ],
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "10",
+      "title": "Brandy Melville Women's Cream and White Shirt",
+      "description": "This is a product listing Shirts2ABsdfkmH043",
+      "price": 21,
+      "brand": "Brandy Melville",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 1
+        },
+        {
+          "size": "M",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/9600801/1769931338_bc1b5a57e702429b94f17f9d3eaf7854/P0.jpg",
+        "https://media-photos.depop.com/b1/9600801/1769931397_c48faff7720647b88b91da20f2511545/P0.jpg"
+      ],
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "categoryId": 2
+    },
+    {
+      "id": "11",
+      "title": "Nike Men's Black Trainers",
+      "description": "This is a product listing spfokdg2ABsdfkmH043",
+      "price": 60,
+      "brand": "Nike",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 2
+        },
+        {
+          "size": "L",
+          "stock": 2
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/17466615/1785676907_ffa2cb967a9a45138ff39cde204edbbb/P0.jpg",
+        "https://media-photos.depop.com/b1/17466615/1785676956_1f30b77eb0c34c1b9136618b05c058e4/P0.jpg"
+      ],
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "categoryId": 6
+    },
+    {
+      "id": "12",
+      "title": "Converse Women's Green Trainers",
+      "description": "This is a product listing slflsg2ABsdfkmH043",
+      "price": 55,
+      "brand": "Converse",
+      "sizes": [
+        {
+          "size": "S",
+          "stock": 1
+        }
+      ],
+      "imageURL": [
+        "https://media-photos.depop.com/b1/21406801/1787022446_3d7ac5d6b2364551acd831bc4f4496e0/P0.jpg",
+        "https://media-photos.depop.com/b1/21406801/1787025325_b8e2d0a5e3a441d0a9cad4edf4b12c54/P0.jpg"
+      ],
+      "colors": [
+        "#FFFFFF",
+        "#3D8A48"
+      ],
+      "categoryId": 6
+    }
+  ]
+}
