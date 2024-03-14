@@ -8,10 +8,12 @@ import { loginSchema } from '../../supports/schema/registerSchema';
 import { useContext } from "react";
 import { useUserContext } from "../../supports/context/useUserContext";
 import { useNavigate  } from "react-router-dom";
+import { useBagContext } from "../../supports/context/useBagContext";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const {setUserData} = useContext(useUserContext)
+  const {setBagTotal} = useContext(useBagContext)
   const navigate = useNavigate();
   
   const handleLogin = async(values,reset) => {
@@ -22,6 +24,8 @@ export default function LoginPage() {
       if(findUser.data['0']['password'] !== values.password) throw new Error("Incorrect password!")
       setUserData({id: findUser.data[0].id, username: findUser.data[0].username});
       localStorage.setItem('dataUser',JSON.stringify({id: findUser.data[0].id}))
+      const findBag = await axios.get(`http://localhost:5000/carts?userId=${findUser.data[0].id}`)
+      setBagTotal(findBag.data.length)
       toast.success('Login Successful!')
       reset()
       navigate("/product-page")

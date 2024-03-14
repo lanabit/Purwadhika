@@ -6,8 +6,9 @@ import { IoIosSearch } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { useUserContext } from "../../../supports/context/useUserContext";
+import { useBagContext } from "../../../supports/context/useBagContext";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 function menu() {
   <div className="w-[100vw] bg-pink-200">
     <h2>Contoh aja</h2>
@@ -16,19 +17,31 @@ function menu() {
 }
 
 export default function Navbar() {
+  const navigate = useNavigate()
   let loc = useLocation();
   const {setUserData, userData} = useContext(useUserContext);
-
+  const {setBagTotal, bagTotal} = useContext(useBagContext);
   const handleKeepLogin = async() => {
     try {
       let dataUser = localStorage.getItem('dataUser')
       dataUser = JSON.parse(dataUser)
 
       const res = await axios.get(`http://localhost:5000/users/${dataUser.id}`)
+      const resTotal = await axios.get(`http://localhost:5000/carts?userId=${dataUser.id}`)
+      
+      setBagTotal({id: res.data.id, total: resTotal.data.length})
       setUserData({id: res.data.id, username: res.data.username})
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const handleLogout = () =>{
+    localStorage.removeItem('dataUser')
+    setUserData(null)
+    setBagTotal(null)
+    navigate('/')
+    window.location.reload()
   }
 
   useEffect(()=>{
@@ -70,8 +83,9 @@ export default function Navbar() {
           <div className="px-1">
             <IoMdHeartEmpty className="h-full text-2xl hover:cursor-pointer hover:text-neutral-500"></IoMdHeartEmpty>
           </div>
-          <div className="px-1">
+          <div className="px-1 relative">
             <Link to='/shopping-bag'>
+            {(bagTotal !== null) ? <div className="absolute h-4 w-4 text-center bg-red-500 top-1 right-2 text-white font-medium right-0 px-1 rounded rounded-full text-xs">{bagTotal.total}</div>: null}
             <IoBagOutline className="h-full mx-2 text-2xl hover:cursor-pointer hover:text-neutral-500" />
             </Link>
           </div>
@@ -81,7 +95,18 @@ export default function Navbar() {
             </button>
           </div>
           {
-            userData !== null? <div className="my-auto px-3 font-medium hover:cursor-pointer hover:text-neutral-500">{userData.username}</div> : 
+            userData !== null?
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} className="my-auto px-3 font-medium hover:cursor-pointer hover:text-neutral-500">
+                {userData.username}
+              </div>
+              <ul tabIndex={0} className="dropdown-content z-50 menu p-2 shadow bg-white rounded-box w-40">
+                <li className="py-3 px-2 hover:cursor-pointer hover:bg-neutral-200 rounded rounded-lg">Profile</li>
+                <li className="py-3 px-2 hover:cursor-pointer hover:bg-neutral-200 rounded rounded-lg">Setting</li>
+                <li onClick={handleLogout} className="py-3 px-2 border-t hover:cursor-pointer hover:bg-black hover:text-white hover:font-medium rounded rounded-lg">Log out</li>
+              </ul>
+            </div> 
+            : 
             <>
             <div>
             <Link to="/signup">
@@ -101,8 +126,8 @@ export default function Navbar() {
           }
         </div>
       </div>
-      <div className={`flex flex-row items-center border-b pl-12 bg-white static relative w-screen z-50 ${loc.pathname === '/login'? 'hidden' : 'block'}`}>
-        <div className="group z-40 bg-white">
+      <div className={`flex flex-row items-center border-b pl-12 bg-white static relative w-screen z-20 ${loc.pathname === '/login'? 'hidden' : 'block'}`}>
+        <div className="group bg-white">
         <button class="btn btn-ghost text-nowrap rounded hover:text-neutral-50 hover:bg-black text-lg">
           Menswear
         </button>

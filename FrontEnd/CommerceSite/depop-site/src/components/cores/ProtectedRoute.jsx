@@ -6,7 +6,8 @@ export default function ProtectedRoute({children}) {
 
   let dataUser = localStorage.getItem('dataUser')
   dataUser = JSON.parse(dataUser)
-  if(dataUser.id && (location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/register')) return navigate('/') 
+  if(dataUser?.id && (location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/register')) return navigate('/')  
+  
   return(
     <>
     {children}

@@ -8,6 +8,7 @@ import { data } from "autoprefixer";
 import { useContext } from "react";
 import { useUserContext } from "../../supports/context/useUserContext";
 import { toast } from "react-toastify";
+import { useBagContext } from "../../supports/context/useBagContext";
 
 export default function ProductDetailPage(){
   const params = useParams()
@@ -16,10 +17,23 @@ export default function ProductDetailPage(){
   const [ quantity, setQuantity ] = useState(null)
   const {userData} = useContext(useUserContext);
   const navigate = useNavigate()
+  const {setBagTotal} = useContext(useBagContext);
+
   const getId = async() => {
     try {
       const res = await axios.get(`http://localhost:5000/products/${params.id}`)
       console.log(res.data)
+      const res2 = await axios.get(`http://localhost:5000/products/${params.id}`)
+
+      let b
+      const a = res2.data.sizes
+      console.log("a",a)
+      Object.keys(a).forEach(key => {
+        const val = a[key]
+        console.log("val",val)
+        if(val.size === size) b = val.stock
+      })
+
       setProduct(res.data)
     } catch (error) {
       console.log(error)
@@ -30,25 +44,47 @@ export default function ProductDetailPage(){
     try {
       let dataUser = localStorage.getItem('dataUser')
       dataUser = JSON.parse(dataUser)
+      if (!dataUser) { throw new Error ('Sign up or Log in!')}
       if(size === null) throw new Error('Select Size First!')
       const res = await axios.get(`http://localhost:5000/carts?userId=${dataUser.id}&productId=${product.id}`)
-      console.log("res data 0",res.data[0])
-      console.log("dataUser", dataUser.id)
-      console.log("product.id", product.id)
+      let b
+      const res2 = await axios.get(`http://localhost:5000/products/${params.id}`)
+      const a = res2.data.sizes
+      Object.keys(a).forEach(key => {
+        const val = a[key]
+        console.log("val",val)
+        if(val.size === size) b = val.stock
+      })
       if (res.data[0]) {
         let cartId = res.data[0].id
         let prevQuantity = { "quantity": res.data[0].quantity + quantity }
+
+        if (res.data[0].quantity + quantity > size.stock) return toast.error(`${res.data[0].quantity} in bag. Maximum stock reached`)
+
         await axios.patch(`http://localhost:5000/carts/${cartId}`, prevQuantity)
-      }else{
+      } else {
         await axios.post('http://localhost:5000/carts', {
         userId: userData.id,
         productId: product.id,
+        size: size.size,
         quantity: quantity
       })
       }
+      let bagUpdater = await axios.get(`http://localhost:5000/carts?userId=${dataUser.id}`)
+      setBagTotal({total: bagUpdater.data.length})
       toast.success('Added to Bag')
     } catch (error) {
       toast.error(error.message)
+    } finally {
+      //setBagTotal({total: res.data.length})
+    }
+  }
+
+  const stockHandler = async() => {
+    try {
+      
+    } catch (error) {
+      console.log(error)
     }
   }
 
