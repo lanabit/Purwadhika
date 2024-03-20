@@ -1,24 +1,19 @@
+'use client'
 import { IoBagOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosSearch } from "react-icons/io";
-import { useLocation } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { useUserContext } from "../../../supports/context/useUserContext";
-import { useBagContext } from "../../../supports/context/useBagContext";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-function menu() {
-  <div className="w-[100vw] bg-pink-200">
-    <h2>Contoh aja</h2>
-    <a>Contoh</a>
-  </div>
-}
+import Link from 'next/link'
+import { useUserContext } from "~/supports/context/useUserContext";
+import { useBagContext } from "~/supports/context/useBagContext";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
-  const navigate = useNavigate()
-  let loc = useLocation();
+
+  const navigate = useRouter()
+  // let loc = useLocation();
   const {setUserData, userData} = useContext(useUserContext);
   const {setBagTotal, bagTotal} = useContext(useBagContext);
   const handleKeepLogin = async() => {
@@ -54,11 +49,11 @@ export default function Navbar() {
         <div className="block ml-16 md:hidden">
           <RxHamburgerMenu></RxHamburgerMenu>
         </div>
-        <Link to="/">
           <div className="mx-16">
-            <img width="100px" height="70px" src="/Depop_logo.svg"></img>
+            <Link href={`/`}>
+            <img src="/Depop_logo.svg" className="h-[30px] object-fit"></img>
+            </Link>
           </div>
-        </Link>
         <div className="w-[50%] hidden md:block">
           <label class="input w-[60%] input-bordered flex items-center gap-2 rounded-full ml-8 lg:w-[70%]">
             <input type="text" class="grow" placeholder="Search" />
@@ -84,15 +79,10 @@ export default function Navbar() {
             <IoMdHeartEmpty className="h-full text-2xl hover:cursor-pointer hover:text-neutral-500"></IoMdHeartEmpty>
           </div>
           <div className="px-1 relative">
-            <Link to='/shopping-bag'>
-            {(bagTotal?.total > 0) ? <div className="absolute h-4 w-4 text-center bg-red-500 top-1 right-2 text-white font-medium right-0 px-1 rounded rounded-full text-xs">{bagTotal.total}</div>: null}
-            <IoBagOutline className="h-full mx-2 text-2xl hover:cursor-pointer hover:text-neutral-500" />
+            <Link href={""}>
+              {(bagTotal?.total > 0) ? <div className="absolute h-4 w-4 text-center bg-red-500 top-1 right-2 text-white font-medium right-0 px-1 rounded rounded-full text-xs">{bagTotal.total}</div>: null}
+              <IoBagOutline className="h-full mx-2 text-2xl hover:cursor-pointer hover:text-neutral-500" />
             </Link>
-          </div>
-          <div>
-            <button class="btn text-nowrap bg-black text-white hover:bg-neutral-500 hidden lg:block">
-              Sell now
-            </button>
           </div>
           {
             userData !== null?
@@ -109,24 +99,30 @@ export default function Navbar() {
             : 
             <>
             <div>
-            <Link to="/signup">
+                <button class="btn text-nowrap bg-black text-white hover:bg-neutral-500 hidden lg:block">
+                  Sell now
+                </button>
+              </div>
+              <div>
               <button class="btn mx-2 bg-black text-white text-nowrap hover:bg-neutral-500 lg:btn-ghost lg:hover:bg-neutral-200 lg:border-black lg:border-2 lg:hover:border-black lg:hover:border-2">
+                <Link href={`/signup`}>
                 Sign up
+                </Link>
               </button>
-            </Link>
             </div>
             <div>
-              <Link to="/login">
-                <button class="btn btn-ghost mx-[-16px] text-nowrap hover:bg-transparent hover:text-neutral-400 hidden md:block">
-                  Log in
-                </button>
+              <button class="btn btn-ghost mx-[-16px] text-nowrap hover:bg-transparent hover:text-neutral-400 hidden md:block">
+              <Link href={`/login`}>
+                Log in
               </Link>
+              </button>
             </div>
             </>
           }
         </div>
+        
       </div>
-      <div className={`flex flex-row items-center border-b pl-12 bg-white static relative w-screen z-20 ${loc.pathname === '/login'? 'hidden' : 'block'}`}>
+      <div className={`flex flex-row items-center border-b pl-12 bg-white static relative w-screen z-20`}>
         <div className="group bg-white">
         <button class="btn btn-ghost text-nowrap rounded hover:text-neutral-50 hover:bg-black text-lg">
           Menswear

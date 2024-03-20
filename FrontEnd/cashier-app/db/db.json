@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": "894d",
+      "username": "god_admin",
+      "typeId": "1",
+      "password": "123123123"
+    },
+    {
+      "id": "c93a",
+      "username": "admin1",
+      "typeId": "2",
+      "password": "123123123"
+    }
+  ],
+  "types": [
+    {
+      "id": "1",
+      "name": "superadmin"
+    },
+    {
+      "id": "2",
+      "name": "admin"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Bites"
+    },
+    {
+      "id": "2",
+      "name": "Mains"
+    },
+    {
+      "id": "3",
+      "name": "Drinks"
+    }
+  ],
+  "menus": [
+    {
+      "id": "73db",
+      "name": "Product1",
+      "price": "42900",
+      "imageURL": "https://i.pinimg.com/564x/c7/24/ea/c724ea934e3f115f14a28b0e2b32f471.jpg",
+      "desc": "asofijaosfj",
+      "categoryId": "2"
+    },
+    {
+      "id": "5044",
+      "name": "Caramelized Onion and Brandied Apple Burger",
+      "price": "75000",
+      "imageURL": "https://i.pinimg.com/564x/05/03/f4/0503f4b5766bae74ae1422a5cffa75fe.jpg",
+      "desc": "Caramelized Onion & Brandied Apple Burgers, generously topped with sticky-sweet caramelized onions and warm apples robed in brandy.",
+      "categoryId": "2"
+    },
+    {
+      "id": "14ed",
+      "name": "Beer Battered Fish",
+      "price": "60000",
+      "imageURL": "https://i.pinimg.com/564x/20/22/e0/2022e0cf90251567b8d7a6572a469f33.jpg",
+      "desc": "Our light and crispy beer battered fish recipe is twenty thousand leagues above any of the frozen varieties, and will take your fish fry to the next level.",
+      "categoryId": "2"
+    }
+  ]
+}

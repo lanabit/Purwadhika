@@ -33,14 +33,6 @@
       "password": "123maria"
     },
     {
-      "id": "6504",
-      "firstName": "ariana",
-      "lastName": "grande",
-      "email": "ariana@grande",
-      "username": "arianagrande",
-      "password": "arianagrande"
-    },
-    {
       "id": "96bd",
       "firstName": "pink",
       "lastName": "floyd",
@@ -49,12 +41,20 @@
       "password": "pinkfloyd"
     },
     {
-      "id": "6edd",
-      "firstName": "nana",
-      "lastName": "nini",
-      "email": "nana@nini",
-      "username": "nananini",
-      "password": "nananini"
+      "id": "f57f",
+      "firstName": "qlail",
+      "lastName": "anandio",
+      "email": "qlail@anandio",
+      "username": "anandio",
+      "password": "123123123"
+    },
+    {
+      "id": "f53a",
+      "firstName": "dito",
+      "lastName": "anandio",
+      "email": "dito@anandio",
+      "username": "ananditooo",
+      "password": "123123123"
     }
   ],
   "categories": [

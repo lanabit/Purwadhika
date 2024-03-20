@@ -1,29 +1,36 @@
-import { useNavigate, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+'use client'
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState, useContext } from "react"
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoBookmarkOutline } from "react-icons/io5";
 import axios from "axios";
-import Loading from "../../components/cores/Loading";
-import { data } from "autoprefixer";
-import { useContext } from "react";
-import { useUserContext } from "../../supports/context/useUserContext";
 import { toast } from "react-toastify";
-import { useBagContext } from "../../supports/context/useBagContext";
+import { useUserContext } from '~/supports/context/useUserContext';
+import { useBagContext } from '~/supports/context/useBagContext';
+// function MyComponent() {
+//   const router = useRouter();
+//   const { id } = router.query;
 
-export default function ProductDetailPage(){
-  const params = useParams()
+//   // Now you can use the 'id' parameter as needed
+//   console.log(id); // Access the 'id' parameter
+
+
+export default function productDetail() {
+  const searchParams = useSearchParams()
+  const key = searchParams.get('id')
+  const id = JSON.parse(key)
+  console.log(id)
   const [ product, setProduct ] = useState(null)
   const [ size, setSize ] = useState(null)
   const [ quantity, setQuantity ] = useState(null)
   const {userData} = useContext(useUserContext);
-  const navigate = useNavigate()
   const {setBagTotal} = useContext(useBagContext);
-
+  console.log(id)
   const getId = async() => {
     try {
-      const res = await axios.get(`http://localhost:5000/products/${params.id}`)
+      const res = await axios.get(`http://localhost:5000/products/${id}`)
       console.log(res.data)
-      const res2 = await axios.get(`http://localhost:5000/products/${params.id}`)
+      const res2 = await axios.get(`http://localhost:5000/products/${id}`)
 
       let b
       const a = res2.data.sizes
@@ -89,7 +96,7 @@ export default function ProductDetailPage(){
     getId()
   },[])
   
-  if(product === null) return <div><Loading/></div>
+  if(product === null) return <div>Loading...{/* <Loading/> */}</div>
   return(
     <div className="flex flex-row m-8 gap-8 justify-center">
       <div className="relative">
